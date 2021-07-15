@@ -10,14 +10,15 @@ public class StudentController {
 	CommandConsole console = new CommandConsole();
 	Scanner scan = new Scanner(System.in);
 	StudentList studentList = null;
-	
+
 	public StudentController() {
 		studentList = new StudentList();
 	}
-	
+
 	public StudentController(StudentList studentList) {
-		this.studentList = studentList; 
+		this.studentList = studentList;
 	}
+
 	public int getCommand() {
 		console.guide();
 		return Integer.parseInt(scan.nextLine());
@@ -66,19 +67,20 @@ public class StudentController {
 	}
 
 	public void searchStudent() {
-		if(studentList.getSize() > 0) {
-		console.addStudentGuideNumber();
-		int number = Integer.parseInt(scan.nextLine());
-		Student student = studentList.search(number);
-		if (student.isEmpty()) {
-			
-		}
-		student.introduceMyself();
+		if (studentList.getSize() > 0) {
+			console.addStudentGuideNumber();
+			int number = Integer.parseInt(scan.nextLine());
+			Student student = studentList.search(number);
+			if (student.isEmpty()) {
+				System.out.println("입력된 학생이 없습니다.\n");
+				return;
+			} 
+			student.introduceMyself();
 		} else {
 			System.out.println("등록된 학생이 없습니다.\n");
 		}
 	}
-	
+
 	public void printAll() {
 		for (int i = 0; i < studentList.getSize(); i++) {
 			Student student = studentList.get(i);

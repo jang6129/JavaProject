@@ -8,15 +8,16 @@ import javax.swing.JLabel;
 public class CommandConsole extends JFrame {
 	
 	public CommandConsole() {
-		setTitle("학생부");
-		setSize(500, 500);
-		setVisible(true);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);				
+//		setTitle("학생부");
+//		setSize(500, 500);
+//		setVisible(true);
+//		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);				
 	}
 	
 	public void guide() {
-		Container contentPane = getContentPane();
-		contentPane.add(new JLabel("1. 학생 등록\n2. 학생 수정\n3. 학생 삭제\n4. 전체 출력\n5. 학생 검색\n6. 프로그램 종료\n\n입력하세요 : "));
+//		Container contentPane = getContentPane();
+//		contentPane.add(new JLabel("1. 학생 등록\n2. 학생 수정\n3. 학생 삭제\n4. 전체 출력\n5. 학생 검색\n6. 프로그램 종료\n\n입력하세요 : "));
+		System.out.println("1. 학생 등록\n2. 학생 수정\n3. 학생 삭제\n4. 전체 출력\n5. 학생 검색\n6. 프로그램 종료\n\n입력하세요 : ");
 	}
 
 	public void addStudentGuideNumber() {
