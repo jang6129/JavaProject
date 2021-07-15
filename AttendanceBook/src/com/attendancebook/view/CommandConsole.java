@@ -1,4 +1,4 @@
-package com.attendancecbook.view;
+package com.attendancebook.view;
 
 import java.awt.Container;
 

@@ -2,9 +2,9 @@ package com.attendancebook.controller;
 
 import java.util.Scanner;
 
-import com.attendancecbook.model.Student;
-import com.attendancecbook.model.StudentList;
-import com.attendancecbook.view.CommandConsole;
+import com.attendancebook.model.Student;
+import com.attendancebook.model.StudentList;
+import com.attendancebook.view.CommandConsole;
 
 public class StudentController {
 	CommandConsole console = new CommandConsole();

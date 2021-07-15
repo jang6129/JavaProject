@@ -1,4 +1,4 @@
-package com.attendancecbook.model;
+package com.attendancebook.model;
 
 import java.util.ArrayList;
 

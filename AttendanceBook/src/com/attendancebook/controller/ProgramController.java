@@ -1,6 +1,6 @@
 package com.attendancebook.controller;
 
-import com.attendancecbook.model.StudentList;
+import com.attendancebook.model.StudentList;
 
 public class ProgramController {
 
