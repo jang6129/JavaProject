@@ -19,9 +19,8 @@ public class StudentController {
 		this.studentList = studentList;
 	}
 
-	public int getCommand() {
-		console.guide();
-		return Integer.parseInt(scan.nextLine());
+	public void getCommand() {
+		CommandConsole console = new CommandConsole();
 	}
 
 	public void addStudent() {
