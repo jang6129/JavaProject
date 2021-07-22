@@ -5,8 +5,10 @@ import java.util.Scanner;
 import com.attendancebook.model.Student;
 import com.attendancebook.model.StudentList;
 import com.attendancebook.view.CommandConsole;
+import com.attendancebook.view.SampleGUI;
 
 public class StudentController {
+	SampleGUI gui = new SampleGUI();
 	CommandConsole console = new CommandConsole();
 	Scanner scan = new Scanner(System.in);
 	StudentList studentList = null;
@@ -20,7 +22,8 @@ public class StudentController {
 	}
 
 	public void getCommand() {
-		CommandConsole console = new CommandConsole();
+//		CommandConsole console = new CommandConsole();
+//		SampleGUI gui = new SampleGUI();
 	}
 
 	public void addStudent() {

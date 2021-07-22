@@ -11,30 +11,30 @@ import javax.swing.JTextArea;
 public class CommandConsole {
 
 	public CommandConsole() {
-		JFrame frame = new JFrame();
-		frame.setResizable(false);
-		frame.setTitle("학생부");
-		frame.setSize(900, 800);
-		frame.setVisible(true);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		JPanel panel = new JPanel();
-		JButton register = new JButton("학생 등록");
-		JButton modification = new JButton("학생 수정");
-		JButton delete = new JButton("학생 삭제");
-		JButton print = new JButton("전체 출력");
-		JButton search = new JButton("학생 검색");
-		JButton close = new JButton("프로그램 종료");
-		JTextArea textScreen = new JTextArea();
-
-		panel.add(register);
-		panel.add(modification);
-		panel.add(delete);
-		panel.add(print);
-		panel.add(search);
-		panel.add(close);
-		panel.add(textScreen);
-		frame.add(panel);
-		
+//		JFrame frame = new JFrame();
+//		frame.setResizable(false);
+//		frame.setTitle("학생부");
+//		frame.setSize(900, 800);
+//		frame.setVisible(true);
+//		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		JPanel panel = new JPanel();
+//		JButton register = new JButton("학생 등록");
+//		JButton modification = new JButton("학생 수정");
+//		JButton delete = new JButton("학생 삭제");
+//		JButton print = new JButton("전체 출력");
+//		JButton search = new JButton("학생 검색");
+//		JButton close = new JButton("프로그램 종료");
+//		JTextArea textScreen = new JTextArea();
+//
+//		panel.add(register);
+//		panel.add(modification);
+//		panel.add(delete);
+//		panel.add(print);
+//		panel.add(search);
+//		panel.add(close);
+//		panel.add(textScreen);
+//		frame.add(panel);
+//		
 //		register.addActionListener(new ActionListener() {	
 //			public void actionPerformed(ActionEvent e) {
 //				textScreen.setText(textScreen.getText());
