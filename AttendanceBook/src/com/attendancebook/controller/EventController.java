@@ -10,13 +10,13 @@ public class EventController implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		ta.setText("");
-		String name = tf1.getText();
-		int age = Integer.parseInt(tf2.getText());
-//		dao.insertData(new Data(name, age));
-		ta.append("입력 완료 \n");
-		tf1.setText("");
-		tf2.setText("");
+//		ta.setText("");
+//		String name = tf1.getText();
+//		int age = Integer.parseInt(tf2.getText());
+////		dao.insertData(new Data(name, age));
+//		ta.append("입력 완료 \n");
+//		tf1.setText("");
+//		tf2.setText("");
 
 	}
 

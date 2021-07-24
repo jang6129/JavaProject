@@ -19,10 +19,12 @@ public class SampleGUI {
 	JPanel jpanel = new JPanel();
 	JTextField tf1 = new JTextField();
 	JTextField tf2 = new JTextField();
+	JTextField tf3 = new JTextField();
 	JTextArea ta = new JTextArea();
 	JButton btn1, btn2, btn3, btn4, btn5;
 	JLabel jl1 = new JLabel("NAME : ");
-	JLabel jl2 = new JLabel("AGE : ");
+	JLabel jl2 = new JLabel("MAJOR : ");
+	JLabel jl3 = new JLabel("GRADE : ");
 
 	public SampleGUI() {
 		GUI_init();
@@ -37,29 +39,33 @@ public class SampleGUI {
 		jpanel.setLayout(null);
 		jframe.add(jpanel);
 		// 입력 공간
-		tf1.setBounds(90, 25, 70, 25);
+		tf1.setBounds(80, 25, 70, 25);
 		jpanel.add(tf1); // 이름 입력 공간
-		tf2.setBounds(215, 25, 70, 25);
-		jpanel.add(tf2); // 나이 입력 공간
-		jl1.setBounds(37, 21, 70, 30);
+		tf2.setBounds(225, 25, 70, 25);
+		jpanel.add(tf2); // 전공 입력 공간
+		tf3.setBounds(365, 25, 70, 25);
+		jpanel.add(tf3); // 학년 입력 공간
+		jl1.setBounds(30, 21, 70, 30);	
 		jpanel.add(jl1); // 이름 라벨
 		jl2.setBounds(170, 21, 70, 30);
-		jpanel.add(jl2); // 나이 라벵
+		jpanel.add(jl2); // 전공 라벨
+		jl3.setBounds(310, 21, 70, 30);
+		jpanel.add(jl3); // 학년 라벨
 		// 입력한 글이 보이는 창
 		JScrollPane jsp = new JScrollPane(ta); // 창 스크롤
 		jsp.setBounds(20, 70, 300, 200);
 		jpanel.add(jsp);
 		// 입력 버튼 - create
-		jpanel.add(btn1 = new JButton("입력"));
+		jpanel.add(btn1 = new JButton("학생 등록"));
 		btn1.setBounds(350, 70, 100, 30);
 		// 출력 버튼 - read
-		jpanel.add(btn2 = new JButton("출력"));
+		jpanel.add(btn2 = new JButton("전체 출력"));
 		btn2.setBounds(350, 110, 100, 30);
 		// 수정 버튼 - update
-		jpanel.add(btn3 = new JButton("수정"));
+		jpanel.add(btn3 = new JButton("학생 수정"));
 		btn3.setBounds(350, 150, 100, 30);
 		// 삭제 버튼 - delete
-		jpanel.add(btn4 = new JButton("삭제"));
+		jpanel.add(btn4 = new JButton("학생 삭제"));
 		btn4.setBounds(350, 190, 100, 30);
 		// 종료 버튼
 		jpanel.add(btn5 = new JButton("종료"));
@@ -126,5 +132,8 @@ public class SampleGUI {
 				System.exit(0);
 			}
 		});
+	}
+	public static void main(String[] args) {
+		SampleGUI gui = new SampleGUI();
 	}
 }
