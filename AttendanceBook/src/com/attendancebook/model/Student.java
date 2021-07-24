@@ -8,12 +8,13 @@ public class Student implements Comparable<Student> {
 	String major;
 	int grade;
 	boolean isEmpty;
+
 	public Student() {
 		isEmpty = true;
 	}
+
 	public Student(String name, String major, int grade) {
-		Random random = new Random();
-		this.number = random.nextInt(1000);
+		this.number = (int) (Math.random() * (99999 - 10000 + 1)) + 10000;
 		this.name = name;
 		this.major = major;
 		this.grade = grade;
@@ -22,7 +23,7 @@ public class Student implements Comparable<Student> {
 	public void introduceMyself() {
 		System.out.println(number + "\n" + name + "\n" + major + "\n" + grade);
 	}
-	
+
 	public boolean isEmpty() {
 		return this.isEmpty;
 	}

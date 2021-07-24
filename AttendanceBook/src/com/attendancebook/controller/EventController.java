@@ -3,21 +3,23 @@ package com.attendancebook.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import com.attendancebook.view.SampleGUI;
+import com.attendancebook.model.StudentList;
+
 public class EventController implements ActionListener {
+	String name;
+	String major;
+	int grade;
+	StudentList studentlist = new StudentList();
 	
-	//여기다가 생성자 오버로딩 하면됨
+	public EventController(String name, String major, int grade) {
+		this.name = name;
+		this.major = major;
+		this.grade = grade;
+	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-//		ta.setText("");
-//		String name = tf1.getText();
-//		int age = Integer.parseInt(tf2.getText());
-////		dao.insertData(new Data(name, age));
-//		ta.append("입력 완료 \n");
-//		tf1.setText("");
-//		tf2.setText("");
-
+		studentlist.add(name, major, grade);
 	}
-
 }

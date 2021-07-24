@@ -12,9 +12,9 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import com.attendancebook.controller.EventController;
+import com.attendancebook.model.StudentList;
 
 public class SampleGUI {
-
 	JFrame jframe = new JFrame();
 	JPanel jpanel = new JPanel();
 	JTextField tf1 = new JTextField();
@@ -25,6 +25,7 @@ public class SampleGUI {
 	JLabel jl1 = new JLabel("NAME : ");
 	JLabel jl2 = new JLabel("MAJOR : ");
 	JLabel jl3 = new JLabel("GRADE : ");
+	StudentList studentlist = new StudentList();
 
 	public SampleGUI() {
 		GUI_init();
@@ -45,7 +46,7 @@ public class SampleGUI {
 		jpanel.add(tf2); // 전공 입력 공간
 		tf3.setBounds(365, 25, 70, 25);
 		jpanel.add(tf3); // 학년 입력 공간
-		jl1.setBounds(30, 21, 70, 30);	
+		jl1.setBounds(30, 21, 70, 30);
 		jpanel.add(jl1); // 이름 라벨
 		jl2.setBounds(170, 21, 70, 30);
 		jpanel.add(jl2); // 전공 라벨
@@ -84,20 +85,14 @@ public class SampleGUI {
 //				tf2.setText("");
 //			}
 //		});
-		btn1.addActionListener(new EventController());
+		btn1.addActionListener(new EventController(tf1.getText(), tf2.getText(), Integer.parseInt(tf3.getText())));
 		// 출력 버튼 이벤트
 		btn2.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				ta.setText("");
-//				ArrayList<Data> arr = new ArrayList<Data>();
-//				arr = dao.readData();
-				ta.append("name" + "\t" + "age" + "\n");
+				ta.append("학번" + "\t" + "이름" + "\t" + "전공" + "\t" + "학년" + "\n");
 				ta.append("--------------------------\n");
-				// 전체 출력
-//				for (int i = 0; i < arr.size(); i++) {
-//					ta.append(arr.get(i).getName() + " \t " + arr.get(i).getAge() + "\n");
-//				}
 			}
 		});
 		// 수정 버튼 이벤트
@@ -133,6 +128,7 @@ public class SampleGUI {
 			}
 		});
 	}
+
 	public static void main(String[] args) {
 		SampleGUI gui = new SampleGUI();
 	}

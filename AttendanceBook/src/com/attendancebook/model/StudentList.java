@@ -7,9 +7,8 @@ public class StudentList {
 
 	public StudentList() {
 		this.studentList = new ArrayList<>();
-
 	}
-	
+
 	public Student get(int index) {
 		return studentList.get(index);
 	}
