@@ -12,6 +12,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import com.attendancebook.controller.EventController;
+import com.attendancebook.controller.PrintController;
 import com.attendancebook.model.FrameData;
 import com.attendancebook.model.StudentList;
 
@@ -93,14 +94,13 @@ public class SampleGUI {
 //		});
 		btn1.addActionListener(new EventController(frameData, studentlist));
 		// 출력 버튼 이벤트
-		btn2.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				ta.setText("");
-				ta.append("학번" + "\t" + "이름" + "\t" + "전공" + "\t" + "학년" + "\n");
-				ta.append("------------------------------------------------------------------------\n");
-			}
-		});
+		btn2.addActionListener(new PrintController(frameData, studentlist));
+//			@Override
+//			public void actionPerformed(ActionEvent arg0) {
+//				ta.setText("");
+//				ta.append("학번" + "\t" + "이름" + "\t" + "전공" + "\t" + "학년" + "\n");
+//				ta.append("------------------------------------------------------------------------\n");
+
 		// 수정 버튼 이벤트
 		btn3.addActionListener(new ActionListener() {
 			@Override

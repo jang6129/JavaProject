@@ -83,7 +83,23 @@ public class StudentList {
 		return emptyStudent;
 	}
 
-	public  int getSize() {
+	public int getSize() {
 		return studentList.size();
+	}
+	
+	public int getNumber(Student student) {
+		return student.number;
+	}
+	
+	public String getName(Student student) {
+		return student.name;
+	}
+	
+	public String getMajor(Student student) {
+		return student.major;
+	}
+	
+	public int getGrade(Student student) {
+		return student.grade;
 	}
 }

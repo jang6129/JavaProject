@@ -26,14 +26,13 @@ public class EventController implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		tf1 = frameData.getTf1();
 		tf2 = frameData.getTf2();
-		tf3 = frameData.getTf3();
-		
+		tf3 = frameData.getTf3();		
 		JTextArea ta = frameData.getTa();
 		name = frameData.getTf1().getText();
 		major = frameData.getTf2().getText();
 		grade = Integer.parseInt(frameData.getTf3().getText());
 		studentlist.add(name, major, grade);
-		ta.append("등록 완료\n");
+		ta.append("등록 완료\n\n");
 		tf1.setText("");
 		tf2.setText("");
 		tf3.setText("");
