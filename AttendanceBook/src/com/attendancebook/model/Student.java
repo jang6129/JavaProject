@@ -32,4 +32,32 @@ public class Student implements Comparable<Student> {
 	public int compareTo(Student s) {
 		return this.name.compareTo(s.name);
 	}
+	
+	public int getStudentNumber() {
+		return number;
+	}
+	
+	public String getStudentName() {
+		return name;
+	}
+	
+	public String getStudentMajor() {
+		return major;
+	}
+	
+	public int getStudentGrade() {
+		return grade;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public void setMajor(String major) {
+		this.major = major;
+	}
+	
+	public void setGrade(int grade) {
+		this.grade = grade;
+	}
 }
