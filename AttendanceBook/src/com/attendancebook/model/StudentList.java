@@ -83,7 +83,7 @@ public class StudentList {
 		return emptyStudent;
 	}
 
-	public int getSize() {
+	public  int getSize() {
 		return studentList.size();
 	}
 }

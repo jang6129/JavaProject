@@ -12,22 +12,28 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import com.attendancebook.controller.EventController;
+import com.attendancebook.model.FrameData;
 import com.attendancebook.model.StudentList;
 
 public class SampleGUI {
 	JFrame jframe = new JFrame();
 	JPanel jpanel = new JPanel();
-	JTextField tf1 = new JTextField();
-	JTextField tf2 = new JTextField();
-	JTextField tf3 = new JTextField();
-	JTextArea ta = new JTextArea();
+	public JTextField tf1;
+	public JTextField tf2;
+	public JTextField tf3;
+	public JTextArea ta;
 	JButton btn1, btn2, btn3, btn4, btn5;
 	JLabel jl1 = new JLabel("NAME : ");
 	JLabel jl2 = new JLabel("MAJOR : ");
 	JLabel jl3 = new JLabel("GRADE : ");
 	StudentList studentlist = new StudentList();
-
+	FrameData frameData = null;
 	public SampleGUI() {
+		frameData = new FrameData();
+		tf1 = frameData.getTf1();
+		tf2 = frameData.getTf2();
+		tf3 = frameData.getTf3();
+		ta = frameData.getTa();
 		GUI_init();
 	}
 
@@ -85,14 +91,14 @@ public class SampleGUI {
 //				tf2.setText("");
 //			}
 //		});
-		btn1.addActionListener(new EventController(tf1.getText(), tf2.getText(), Integer.parseInt(tf3.getText())));
+		btn1.addActionListener(new EventController(frameData, studentlist));
 		// 출력 버튼 이벤트
 		btn2.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				ta.setText("");
 				ta.append("학번" + "\t" + "이름" + "\t" + "전공" + "\t" + "학년" + "\n");
-				ta.append("--------------------------\n");
+				ta.append("------------------------------------------------------------------------\n");
 			}
 		});
 		// 수정 버튼 이벤트
