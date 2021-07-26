@@ -11,6 +11,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import com.attendancebook.controller.EditController;
 import com.attendancebook.controller.EventController;
 import com.attendancebook.controller.PrintController;
 import com.attendancebook.controller.RemoveController;
@@ -48,6 +49,7 @@ public class SampleGUI {
 		jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 창 닫기 버튼 누르면
 																// 꺼지게 설정
 		jframe.setVisible(true);
+		jframe.setTitle("Attendance Book");
 		jpanel.setLayout(null);
 		jframe.add(jpanel);
 		// 입력 공간
@@ -72,19 +74,19 @@ public class SampleGUI {
 		jpanel.add(jsp);
 		// 입력 버튼 - create
 		jpanel.add(btn1 = new JButton("학생 등록"));
-		btn1.setBounds(470, 100, 100, 30);
+		btn1.setBounds(470, 103, 100, 30);
 		// 출력 버튼 - read
 		jpanel.add(btn2 = new JButton("전체 출력"));
-		btn2.setBounds(470, 150, 100, 30);
+		btn2.setBounds(470, 158, 100, 30);
 		// 수정 버튼 - update
 		jpanel.add(btn3 = new JButton("학생 수정"));
-		btn3.setBounds(470, 200, 100, 30);
+		btn3.setBounds(470, 213, 100, 30);
 		// 삭제 버튼 - delete
 		jpanel.add(btn4 = new JButton("학생 삭제"));
-		btn4.setBounds(470, 250, 100, 30);
+		btn4.setBounds(470, 268, 100, 30);
 		// 종료 버튼
 		jpanel.add(btn5 = new JButton("종료"));
-		btn5.setBounds(470, 300, 100, 30);
+		btn5.setBounds(470, 323, 100, 30);
 //		DAO dao = new DAO();
 		// 입력 버튼 이벤트
 //		btn1.addActionListener(new ActionListener() {
@@ -103,7 +105,7 @@ public class SampleGUI {
 		// 학생 등록 버튼 이벤트
 		btn2.addActionListener(new PrintController(frameData, studentlist));
 		// 전체 출력 버튼 이벤트
-//		btn3.addActionListener(new EditController(frameData, studentlist));
+		btn3.addActionListener(new EditController(frameData, studentlist));
 		// 학생 수정 버튼 이벤트
 		btn4.addActionListener(new RemoveController(frameData, studentlist));
 		// 학생 삭제 버튼 이벤트

@@ -31,7 +31,7 @@ public class PrintController implements ActionListener {
 		ta.append("--------------------------------------------------------------------------\n");
 
 		if (studentlist.getSize() == 0) {
-			ta.append("등록된 학생이 없습니다.\n");
+			ta.append("등록된 학생이 없습니다.\n\n");
 		} else {
 			for (int i = 0; i < studentlist.getSize(); i++) {
 				int number = studentlist.getNumber(studentlist.get(i));

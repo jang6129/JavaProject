@@ -32,7 +32,7 @@ public class EventController implements ActionListener {
 		major = frameData.getTf2().getText();
 		grade = Integer.parseInt(frameData.getTf3().getText());
 		studentlist.add(name, major, grade);
-		ta.append("등록 완료\n\n");
+		ta.append("학생 정보가 등록되었습니다.\n\n");
 		tf1.setText("");
 		tf2.setText("");
 		tf3.setText("");
