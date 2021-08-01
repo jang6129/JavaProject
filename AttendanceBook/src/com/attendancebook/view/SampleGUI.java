@@ -33,6 +33,7 @@ public class SampleGUI {
 	JLabel jl4 = new JLabel("NUMBER : ");
 	StudentList studentlist = new StudentList();
 	FrameData frameData = null;
+
 	public SampleGUI() {
 		frameData = new FrameData();
 		tf1 = frameData.getTf1();
@@ -87,38 +88,6 @@ public class SampleGUI {
 		// 종료 버튼
 		jpanel.add(btn5 = new JButton("종료"));
 		btn5.setBounds(470, 323, 100, 30);
-//		DAO dao = new DAO();
-		// 입력 버튼 이벤트
-//		btn1.addActionListener(new ActionListener() {
-//			@Override
-//			public void actionPerformed(ActionEvent arg0) {
-//				ta.setText("");
-//				String name = tf1.getText();
-//				int age = Integer.parseInt(tf2.getText());
-////				dao.insertData(new Data(name, age));
-//				ta.append("입력 완료 \n");
-//				tf1.setText("");
-//				tf2.setText("");
-//			}
-//		});
-		btn1.addActionListener(new EventController(frameData, studentlist));
-		// 학생 등록 버튼 이벤트
-		btn2.addActionListener(new PrintController(frameData, studentlist));
-		// 전체 출력 버튼 이벤트
-		btn3.addActionListener(new EditController(frameData, studentlist));
-		// 학생 수정 버튼 이벤트
-		btn4.addActionListener(new RemoveController(frameData, studentlist));
-		// 학생 삭제 버튼 이벤트
-		btn5.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				System.exit(0);
-			}
-		});
 		// 프로그램 종료 버튼 이벤트
-	}
-
-	public static void main(String[] args) {
-		SampleGUI gui = new SampleGUI();
 	}
 }
