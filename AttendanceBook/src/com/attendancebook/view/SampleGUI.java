@@ -74,19 +74,19 @@ public class SampleGUI {
 		jsp.setBounds(40, 80, 400, 300);
 		jpanel.add(jsp);
 		// 입력 버튼 - create
-		jpanel.add(btn1 = new JButton("학생 등록"));
+		jpanel.add(btn1 = frameData.getBtn1());
 		btn1.setBounds(470, 103, 100, 30);
 		// 출력 버튼 - read
-		jpanel.add(btn2 = new JButton("전체 출력"));
+		jpanel.add(btn2 = frameData.getBtn2());
 		btn2.setBounds(470, 158, 100, 30);
 		// 수정 버튼 - update
-		jpanel.add(btn3 = new JButton("학생 수정"));
+		jpanel.add(btn3 = frameData.getBtn3());
 		btn3.setBounds(470, 213, 100, 30);
 		// 삭제 버튼 - delete
-		jpanel.add(btn4 = new JButton("학생 삭제"));
+		jpanel.add(btn4 = frameData.getBtn4());
 		btn4.setBounds(470, 268, 100, 30);
 		// 종료 버튼
-		jpanel.add(btn5 = new JButton("종료"));
+		jpanel.add(btn5 = frameData.getBtn5());
 		btn5.setBounds(470, 323, 100, 30);
 		// 프로그램 종료 버튼 이벤트
 	}

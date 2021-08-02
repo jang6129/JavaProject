@@ -18,11 +18,11 @@ public class FrameData {
 		tf3 = new JTextField();
 		tf4 = new JTextField();
 		ta = new JTextArea();
-		btn1 = new JButton();
-		btn2 = new JButton();
-		btn3 = new JButton();
-		btn4 = new JButton();
-		btn5 = new JButton();
+		btn1 = new JButton("학생 등록");
+		btn2 = new JButton("전체 출력");
+		btn3 = new JButton("학생 수정");
+		btn4 = new JButton("학생 삭제");
+		btn5 = new JButton("종료");
 	}
 
 	public JTextField getTf1() {
