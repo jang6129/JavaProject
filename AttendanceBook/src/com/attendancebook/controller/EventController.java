@@ -9,18 +9,23 @@ import javax.swing.JTextField;
 import com.attendancebook.model.FrameData;
 import com.attendancebook.model.StudentList;
 
-public class EventController implements ActionListener {
+public class EventController extends ActionController /*implements ActionListener*/ {
 	String name;
 	String major;
 	int grade;
-	JTextField tf1, tf2, tf3;
-	StudentList studentlist = null;
-	FrameData frameData = null;
-	
 	public EventController(FrameData frameData, StudentList studentlist) {
-		this.frameData = frameData;
-		this.studentlist = studentlist;
+		super(frameData, studentlist);
+		// TODO Auto-generated constructor stub
 	}
+
+//	JTextField tf1, tf2, tf3;
+//	StudentList studentlist = null;
+//	FrameData frameData = null;
+//	
+//	public EventController(FrameData frameData, StudentList studentlist) {
+//		this.frameData = frameData;
+//		this.studentlist = studentlist;
+//	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

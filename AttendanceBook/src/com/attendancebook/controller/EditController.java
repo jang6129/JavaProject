@@ -10,15 +10,11 @@ import com.attendancebook.model.FrameData;
 import com.attendancebook.model.Student;
 import com.attendancebook.model.StudentList;
 
-public class EditController implements ActionListener {
-	JTextField tf1, tf2, tf3, tf4;
-	StudentList studentlist = null;
-	FrameData frameData = null;
-	Student student = null;
+public class EditController extends ActionController {
 	
 	public EditController(FrameData frameData, StudentList studentlist) {
-		this.frameData = frameData;
-		this.studentlist = studentlist;
+		super(frameData, studentlist);
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override

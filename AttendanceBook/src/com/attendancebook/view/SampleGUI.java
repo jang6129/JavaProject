@@ -1,8 +1,5 @@
 package com.attendancebook.view;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -11,10 +8,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-import com.attendancebook.controller.EditController;
-import com.attendancebook.controller.EventController;
-import com.attendancebook.controller.PrintController;
-import com.attendancebook.controller.RemoveController;
 import com.attendancebook.model.FrameData;
 import com.attendancebook.model.StudentList;
 
@@ -34,17 +27,17 @@ public class SampleGUI {
 	StudentList studentlist = new StudentList();
 	FrameData frameData = null;
 
-	public SampleGUI() {
-		frameData = new FrameData();
+	public SampleGUI(FrameData frameData) {
+		this.frameData = frameData;
 		tf1 = frameData.getTf1();
 		tf2 = frameData.getTf2();
 		tf3 = frameData.getTf3();
 		tf4 = frameData.getTf4();
 		ta = frameData.getTa();
-		GUI_init();
+		initGUI();
 	}
 
-	public void GUI_init() {
+	public void initGUI() {
 		// GUI 틀 만들기
 		jframe.setBounds(50, 50, 615, 450); // 전체 창 크기
 		jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 창 닫기 버튼 누르면
@@ -88,6 +81,7 @@ public class SampleGUI {
 		// 종료 버튼
 		jpanel.add(btn5 = frameData.getBtn5());
 		btn5.setBounds(470, 323, 100, 30);
+		frameData.setBtn5(btn5);
 		// 프로그램 종료 버튼 이벤트
 	}
 }
