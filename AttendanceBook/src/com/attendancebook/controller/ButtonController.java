@@ -23,7 +23,6 @@ public class ButtonController {
 		btn4 = framedata.getBtn4();
 		btn5 = framedata.getBtn5();
 		
-
 		btn1.addActionListener(new EventController(framedata, studentlist));
 		// 학생 등록 버튼 이벤트
 		btn2.addActionListener(new PrintController(framedata, studentlist));

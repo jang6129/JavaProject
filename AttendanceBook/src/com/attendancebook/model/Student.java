@@ -14,12 +14,12 @@ public class Student implements Comparable<Student> {
 	}
 
 	public Student(String name, String major, int grade) {
-		this.number = (int) (Math.random() * (99999 - 10000 + 1)) + 10000;
+//		this.number = (int) (Math.random() * (99999 - 10000 + 1)) + 10000;
 		this.name = name;
 		this.major = major;
 		this.grade = grade;
 	}
-
+	
 	public void introduceMyself() {
 		System.out.println(number + "\n" + name + "\n" + major + "\n" + grade);
 	}
@@ -59,5 +59,9 @@ public class Student implements Comparable<Student> {
 	
 	public void setGrade(int grade) {
 		this.grade = grade;
+	}
+	
+	public void setNumber(int number) {
+		this.number = number;
 	}
 }

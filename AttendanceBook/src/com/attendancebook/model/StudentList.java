@@ -1,9 +1,12 @@
 package com.attendancebook.model;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class StudentList {
 	ArrayList<Student> studentList;
+	FileManager fm = new FileManager();
 
 	public StudentList() {
 		this.studentList = new ArrayList<>();
@@ -16,6 +19,19 @@ public class StudentList {
 	public void add(String name, String major, int grade) {
 		Student student = new Student(name, major, grade);
 		studentList.add(student);
+		if (studentList.size() == 5) {
+			Collections.sort(studentList);
+			for (int i = 0; i < 5; i++) {
+				get(i).setNumber(210000 + i);
+				try {
+					fm.write(fm.objectToString(get(i)));
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+
+		}
 	}
 
 	public void remove(int number) {
@@ -87,19 +103,19 @@ public class StudentList {
 	public int getSize() {
 		return studentList.size();
 	}
-	
+
 	public int getNumber(Student student) {
 		return student.number;
 	}
-	
+
 	public String getName(Student student) {
 		return student.name;
 	}
-	
+
 	public String getMajor(Student student) {
 		return student.major;
 	}
-	
+
 	public int getGrade(Student student) {
 		return student.grade;
 	}

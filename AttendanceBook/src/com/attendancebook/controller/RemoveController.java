@@ -28,6 +28,7 @@ public class RemoveController implements ActionListener {
 		ta = framedata.getTa();
 		studentlist.remove(Integer.parseInt(tf4.getText()));
 		ta.append("학생 정보가 삭제되었습니다.\n\n");
+		tf4.setText("");
 	}
 
 }
