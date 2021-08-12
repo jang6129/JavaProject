@@ -7,16 +7,14 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import com.attendancebook.model.FrameData;
+import com.attendancebook.model.ObjectManager;
 import com.attendancebook.model.StudentList;
 
-public class PrintController implements ActionListener {
+public class PrintController extends ActionController implements ActionListener {
 	JTextField tf1, tf2, tf3;
-	StudentList studentlist = null;
-	FrameData frameData = null;
 
-	public PrintController(FrameData frameData, StudentList studentlist) {
-		this.frameData = frameData;
-		this.studentlist = studentlist;
+	public PrintController(ObjectManager objectManager) {
+		super(objectManager);
 	}
 
 	@Override
@@ -29,7 +27,7 @@ public class PrintController implements ActionListener {
 		ta.append("--------------------------------------------------------------------------\n");
 		ta.append("학번" + "\t" + "이름" + "\t" + "전공" + "\t" + "학년" + "\n");
 		ta.append("--------------------------------------------------------------------------\n");
-
+		
 		if (studentlist.getSize() == 0) {
 			ta.append("등록된 학생이 없습니다.\n\n");
 		} else {

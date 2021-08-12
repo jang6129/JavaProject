@@ -5,8 +5,7 @@ import com.attendancebook.model.FileManager;
 import com.attendancebook.model.StudentList;
 
 public class AttendanceBook {
-	public static void main(String[] args) {
-		FileManager fm = new FileManager();
+	public static void main(String[] args) {	
 		ButtonController bc = new ButtonController();
 	}
 }

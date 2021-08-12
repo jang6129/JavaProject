@@ -6,7 +6,6 @@ import java.util.Collections;
 
 public class StudentList {
 	ArrayList<Student> studentList;
-	FileManager fm = new FileManager();
 
 	public StudentList() {
 		this.studentList = new ArrayList<>();
@@ -16,21 +15,13 @@ public class StudentList {
 		return studentList.get(index);
 	}
 
-	public void add(String name, String major, int grade) {
-		Student student = new Student(name, major, grade);
+	public void add(Student student) {
 		studentList.add(student);
 		if (studentList.size() == 5) {
 			Collections.sort(studentList);
 			for (int i = 0; i < 5; i++) {
 				get(i).setNumber(210000 + i);
-				try {
-					fm.write(fm.objectToString(get(i)));
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
 			}
-
 		}
 	}
 

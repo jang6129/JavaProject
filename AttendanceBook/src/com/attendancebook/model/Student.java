@@ -20,6 +20,13 @@ public class Student implements Comparable<Student> {
 		this.grade = grade;
 	}
 	
+	public Student(String name, String major, int grade, int number) {
+		this.number = number;
+		this.name = name;
+		this.major = major;
+		this.grade = grade;
+	}
+	
 	public void introduceMyself() {
 		System.out.println(number + "\n" + name + "\n" + major + "\n" + grade);
 	}

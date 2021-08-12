@@ -7,19 +7,19 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import com.attendancebook.model.FrameData;
+import com.attendancebook.model.ObjectManager;
 import com.attendancebook.model.Student;
 import com.attendancebook.model.StudentList;
 
-public class RemoveController implements ActionListener {
+public class RemoveController extends ActionController implements ActionListener {
 	JTextField tf4;
 	JTextArea ta;
 	StudentList studentlist = null;
 	FrameData framedata = null;
 	Student student = null;
 
-	public RemoveController(FrameData framedata, StudentList studentlist) {
-		this.framedata = framedata;
-		this.studentlist = studentlist;
+	public RemoveController(ObjectManager objectManager) {
+		super(objectManager);
 	}
 	
 	@Override

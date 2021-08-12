@@ -7,13 +7,14 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import com.attendancebook.model.FrameData;
+import com.attendancebook.model.ObjectManager;
 import com.attendancebook.model.Student;
 import com.attendancebook.model.StudentList;
 
 public class EditController extends ActionController {
 	
-	public EditController(FrameData frameData, StudentList studentlist) {
-		super(frameData, studentlist);
+	public EditController(ObjectManager objectManager) {
+		super(objectManager);
 		// TODO Auto-generated constructor stub
 	}
 

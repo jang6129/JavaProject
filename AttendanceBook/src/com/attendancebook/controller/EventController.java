@@ -1,22 +1,20 @@
 package com.attendancebook.controller;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.Collections;
+import java.io.IOException;
 
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
 
-import com.attendancebook.model.FrameData;
-import com.attendancebook.model.StudentList;
+import com.attendancebook.model.ObjectManager;
+import com.attendancebook.model.Student;
 
 public class EventController extends ActionController /* implements ActionListener */ {
 	String name;
 	String major;
 	int grade;
 
-	public EventController(FrameData frameData, StudentList studentlist) {
-		super(frameData, studentlist);
+	public EventController(ObjectManager objectManager) {
+		super(objectManager);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -33,7 +31,17 @@ public class EventController extends ActionController /* implements ActionListen
 			name = frameData.getTf1().getText();
 			major = frameData.getTf2().getText();
 			grade = Integer.parseInt(frameData.getTf3().getText());
-			studentlist.add(name, major, grade);
+			Student student = new Student(name, major, grade);
+			studentlist.add(student);
+			String studentInfo = filemanager.objectToString();
+			if (studentlist.getSize() == 5) {
+				try {
+					filemanager.write(studentInfo);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
 			ta.append("학생 정보가 등록되었습니다  " + "(" + studentlist.getSize() + "/" + 5 + ")" + "\n\n");
 		}
 		tf1.setText("");

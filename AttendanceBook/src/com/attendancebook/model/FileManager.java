@@ -9,13 +9,17 @@ import java.util.ArrayList;
 
 public class FileManager {
 	private static final String FILE_PATH = "C:\\Users\\jang6\\Desktop\\StudentData.txt";
-	StudentList studentlist = new StudentList();
+	StudentList studentList;
 
-	public String objectToString(Student student) {
+	public FileManager(StudentList studentlist) {
+		this.studentList = studentlist;
+	}
+
+	public String objectToString() {
 		StringBuilder sb = new StringBuilder();
-		Student s = student;
-		sb.append(s.name + " " + s.major + " " + s.grade + " " + s.number + "\n");
-
+		for (Student s : studentList.studentList) {
+			sb.append(s.name + " " + s.major + " " + s.grade + " " + s.number + "\n");
+		}
 		return sb.toString();
 	}
 
@@ -26,13 +30,15 @@ public class FileManager {
 
 		for (int i = 0; i < splitByLine.length; i++) {
 			String[] splitBySpace = splitByLine[i].split(" ");
-			studentlist.add(splitBySpace[0], splitBySpace[1], Integer.parseInt(splitBySpace[3]));
+			student = new Student(splitBySpace[0], splitBySpace[1], Integer.parseInt(splitBySpace[2]),
+					Integer.parseInt(splitBySpace[3]));
+			studentList.add(student);
 		}
 	}
 
 	public void write(String inputString) throws IOException {
 		FileWriter fw;
-		fw = new FileWriter(FILE_PATH);
+		fw = new FileWriter(FILE_PATH, true);
 		BufferedWriter bw = new BufferedWriter(fw);
 		bw.write(inputString);
 		bw.close();
@@ -41,13 +47,13 @@ public class FileManager {
 	public String read() throws IOException {
 		FileReader fr = new FileReader(FILE_PATH);
 		BufferedReader br = new BufferedReader(fr);
-		Student student = new Student();
 
 		String str = null;
+		StringBuilder sb = new StringBuilder();
 
 		while ((str = br.readLine()) != null) {
-
+			sb.append(str + "\n");
 		}
-		return str;
+		return sb.toString();
 	}
 }

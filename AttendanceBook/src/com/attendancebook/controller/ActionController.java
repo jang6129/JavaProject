@@ -5,19 +5,24 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JTextField;
 
+import com.attendancebook.model.FileManager;
 import com.attendancebook.model.FrameData;
+import com.attendancebook.model.ObjectManager;
 import com.attendancebook.model.Student;
 import com.attendancebook.model.StudentList;
 
 public abstract class ActionController implements ActionListener {
 	JTextField tf1, tf2, tf3, tf4;
-	StudentList studentlist = null;
+	StudentList studentlist;
 	FrameData frameData = null;
-	Student student = null;
+	FileManager filemanager;
+	ObjectManager objectManager;
 	
-	public ActionController(FrameData frameData, StudentList studentlist) {
-		this.frameData = frameData;
-		this.studentlist = studentlist;
+	public ActionController(ObjectManager objectManager) {
+		this.objectManager = objectManager;
+		this.studentlist = objectManager.studentlist;
+		this.filemanager = objectManager.filemanager;
+		this.frameData = objectManager.framedata;
 	}
 
 	@Override
