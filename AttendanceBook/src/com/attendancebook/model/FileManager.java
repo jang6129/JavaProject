@@ -24,21 +24,24 @@ public class FileManager {
 	}
 
 	public void stringToObject(String wholeinfo) {
-		String[] splitByLine = wholeinfo.split("\n");
-		String[] list = new String[splitByLine.length];
-		Student student;
 
-		for (int i = 0; i < splitByLine.length; i++) {
-			String[] splitBySpace = splitByLine[i].split(" ");
-			student = new Student(splitBySpace[0], splitBySpace[1], Integer.parseInt(splitBySpace[2]),
-					Integer.parseInt(splitBySpace[3]));
-			studentList.add(student);
+		if (wholeinfo != null) {
+			String[] splitByLine = wholeinfo.split("\n");
+			String[] list = new String[splitByLine.length];
+			Student student;
+
+			for (int i = 0; i < splitByLine.length; i++) {
+				String[] splitBySpace = splitByLine[i].split(" ");
+				student = new Student(splitBySpace[0], splitBySpace[1], Integer.parseInt(splitBySpace[2]),
+						Integer.parseInt(splitBySpace[3]));
+				studentList.add(student);
+			}
 		}
 	}
 
 	public void write(String inputString) throws IOException {
 		FileWriter fw;
-		fw = new FileWriter(FILE_PATH, true);
+		fw = new FileWriter(FILE_PATH);
 		BufferedWriter bw = new BufferedWriter(fw);
 		bw.write(inputString);
 		bw.close();

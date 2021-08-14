@@ -12,7 +12,7 @@ import com.attendancebook.view.SampleGUI;
 
 public class ButtonController {
 	private JButton btn1, btn2, btn3, btn4, btn5;
-	
+
 	ObjectManager objectManager = new ObjectManager();
 	SampleGUI gui = new SampleGUI(objectManager.framedata);
 	FrameData framedata = objectManager.framedata;
@@ -21,18 +21,20 @@ public class ButtonController {
 		String wholeInfo;
 		try {
 			wholeInfo = objectManager.filemanager.read();
-			objectManager.filemanager.stringToObject(wholeInfo);
+			if (wholeInfo != null) {
+				objectManager.filemanager.stringToObject(wholeInfo);
+			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		btn1 = framedata.getBtn1();
 		btn2 = framedata.getBtn2();
 		btn3 = framedata.getBtn3();
 		btn4 = framedata.getBtn4();
 		btn5 = framedata.getBtn5();
-		
+
 		btn1.addActionListener(new EventController(objectManager));
 		// 학생 등록 버튼 이벤트
 		btn2.addActionListener(new PrintController(objectManager));
