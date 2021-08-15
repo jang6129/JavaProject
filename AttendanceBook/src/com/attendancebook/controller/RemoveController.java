@@ -26,7 +26,7 @@ public class RemoveController extends ActionController implements ActionListener
 		ta = frameData.getTa();
 		Student student;
 		StringBuilder sb = new StringBuilder();
-//		studentlist.remove(Integer.parseInt(tf4.getText()));
+		studentlist.remove(Integer.parseInt(tf4.getText()));
 		
 		for (int i = 0; i < studentlist.getSize(); i++) {
 			student = studentlist.get(i);

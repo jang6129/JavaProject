@@ -25,7 +25,7 @@ public class FileManager {
 
 	public void stringToObject(String wholeinfo) {
 
-		if (wholeinfo != null) {
+		try {
 			String[] splitByLine = wholeinfo.split("\n");
 			String[] list = new String[splitByLine.length];
 			Student student;
@@ -36,6 +36,7 @@ public class FileManager {
 						Integer.parseInt(splitBySpace[3]));
 				studentList.add(student);
 			}
+		} catch (ArrayIndexOutOfBoundsException e) {
 		}
 	}
 
